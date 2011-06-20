@@ -46,8 +46,8 @@ class dbal
         }
         
         try {
-            $details['dbname'] = ($details['dbtype'] != 'firebird') ? ";dbname={$details['dbname']}" : '';
-            $this->dbal = new PDO("{$details['dbtype']}:host={$details['hostname']}{$details['dbname']}" , $details['dbuser'], $details['dbpass']);
+            $details['hostname'] = ($details['dbtype'] != 'firebird') ? "host={$details['hostname']};" : '';
+            $this->dbal = new PDO("{$details['dbtype']}:{$details['hostname']}dbname={$details['dbname']}" , $details['dbuser'], $details['dbpass']);
             $this->connected = true;
         } catch(PDOException $errmsg) {
             $this->connected = false;
