@@ -1,0 +1,1 @@
+Requires PHP5 and PHP extension PDO.
