@@ -86,7 +86,7 @@ class dbal
             
             return $dbQuery;
         }
-        return false;
+        return $dbQuery;
     }
     
     function query($sql, $fetchMode = PDO::FETCH_BOTH, $fetchType = 'fetch', $additional = false)
@@ -113,7 +113,7 @@ class dbal
             
             return $dbQuery;
         }
-        return false;
+        return $dbQuery;
     }
     
     function fetchSize()
